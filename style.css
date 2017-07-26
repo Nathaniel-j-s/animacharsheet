@@ -1,0 +1,333 @@
+body {
+	background-color: #f0f0f0;
+	margin: 0;
+}
+p {
+	margin: 0;
+	padding: 0;
+}
+
+/*
+	COLUMN WIDTH STYLE
+*/
+.u1 {
+	display: table;
+	float: left;
+	width: 3.125%;
+	margin-left: 3.125%;
+}
+.u2 {
+	display: table;
+	float: left;
+	width: 6.25%;
+	margin-left: 3.125%;
+}
+.u3 {
+	display: table;
+	float: left;
+	width: 9.375%;
+	margin-left: 3.125%;
+}
+.u4 {
+	display: table;
+	float: left;
+	width: 12.5%;
+	margin-left: 3.125%;
+}
+.u5 {
+	display: table;
+	float: left;
+	width: 15.625;
+	margin-left: 3.125%;
+}
+.u6 {
+	display: table;
+	float: left;
+	width: 18.75%;
+	margin-left: 3.125%;
+}
+.u7 {
+	display: table;
+	float: left;
+	width: 21.875%;
+	margin-left: 3.125%;
+}
+.u8 {
+	display: table;
+	float: left;
+	width: 25%;
+	margin-left: 3.125%;
+}
+.u9 {
+	display: table;
+	float: left;
+	width: 28.125%;
+	margin-left: 3.125%;
+}
+.u10 {
+	display: table;
+	float: left;
+	width: 31.25%;
+	margin-left: 3.125%;
+}
+.u11 {
+	display: table;
+	float: left;
+	width: 34.375%;
+	margin-left: 3.125%;
+}
+.u12 {
+	display: table;
+	float: left;
+	width: 37.5%;
+	margin-left: 3.125%;
+}
+.u13 {
+	display: table;
+	float: left;
+	width: 40.625%;
+	margin-left: 3.125%;
+}
+.u14 {
+	display: table;
+	float: left;
+	width: 43.75%;
+	margin-left: 3.125%;
+}
+.u15 {
+	display: table;
+	float: left;
+	width: 46.875%;
+	margin-left: 3.125%;
+}
+.u16 {
+	display: table;
+	float: left;
+	width: 50%;
+	margin-left: 3.125%;
+}
+.u17 {
+	display: table;
+	float: left;
+	width: 53.125%;
+	margin-left: 3.125%;
+}
+.u18 {
+	display: table;
+	float: left;
+	width: 56.25%;
+	margin-left: 3.125%;
+}
+.u19 {
+	display: table;
+	width: 59.375%;
+	float: left;
+	margin-left: 3.125%;
+}
+.u20 {
+	display: table;
+	float: left;
+	width: 62.5%;
+	margin-left: 3.125%;
+}
+.u21 {
+	display: table;
+	float: left;
+	width: 65.625;
+	margin-left: 3.125%;
+}
+.u22 {
+	display: table;
+	float: left;
+	width: 68.75%;
+	margin-left: 3.125%;
+}
+.u23 {
+	display: table;
+	float: left;
+	width: 71.875%;
+	margin-left: 3.125%;
+}
+.u24 {
+	display: table;
+	float: left;
+	width: 75%;
+	margin-left: 3.125%;
+}
+.u25 {
+	display: table;
+	float: left;
+	width: 78.125%;
+	margin-left: 3.125%;
+}
+.u26 {
+	display: table;
+	float: left;
+	width: 81.25%;
+	margin-left: 3.125%;
+}
+.u27 {
+	display: table;
+	float: left;
+	width: 84.375%;
+	margin-left: 3.125%;
+}
+.u28 {
+	display: table;
+	float: left;
+	width: 87.5%;
+	margin-left: 3.125%;
+}
+.u29 {
+	display: table;
+	float: left;
+	width: 90.625%;
+	margin-left: 3.125%;
+}
+.u30 {
+	display: table;
+	float: left;
+	width: 93.75%;
+	margin-left: 3.125%;
+}
+.u31 {
+	display: table;
+	float: left;
+	width: 96.875%;
+	margin-left: 3.125%;
+}
+.u32 {
+	display: table;
+	float: left;
+	width: 100%;
+	margin-left: 3.125%;
+}
+/*
+	HEADER DIV STYLE
+*/
+#header{
+	background-color: #ffffff;
+	border-style: solid;
+	border-width: 1px;
+	margin: 0;
+}
+
+#header h1 {
+	margin-top: 22px;
+	margin-left: 22px;
+	margin-bottom: 22px;
+	font-size: 32px;
+}
+
+/*
+	FOOTER DIV STYLE
+*/
+footer {
+	background-color: #ffffff;
+	border-style: solid;
+	border-width: 1px;
+	height: 80px;
+}
+
+input {
+	box-sizing: border-box;
+	width: 100%;
+}
+
+table {
+	border-spacing: 0px;
+}
+
+td, th{
+	padding: 0px;
+}
+
+/*
+	MAIN BODY DIV STYLE
+*/
+#bodyContainer {
+	background-color: #ffffff;
+	border-style: solid;
+	border-width: 1px;
+	margin: 0 auto;
+	width: 50%;
+	line-height: 30px
+}
+
+#bodyContainer span {
+}
+
+/*
+	BASIC INFORMATION DIV STYLE
+*/
+
+.divTable{
+	display: table;
+	width: 100%;
+}
+
+
+
+.tableCell {
+	display: table-cell;
+}
+
+.tableInput {
+	width: 100%;
+
+}
+
+#column3 {
+	background-color: black;
+	height: 180px;
+	width: 18.75%;
+}
+
+#column3 img {
+	margin: 5px;
+	width: auto;
+	height: auto;
+}
+
+/*
+	BASIC STATS DIV STYLE
+*/
+
+.charColumnInput {
+	width: 33%;
+}
+
+.healthColumnInput{
+	width: 25%;
+}
+
+.speedColumnInput {
+	width: 25%;
+}
+
+#combatAbilities table {
+	width: 100%;
+}
+
+.wepColumnInput {
+	width: 10%;
+	padding-left: 4px;
+	padding-right: 4px;
+}
+
+.tableInput2 {
+	width: 15%;
+	padding-right: 5px;
+
+}
+
+#weapons {
+	text-align: center;
+}
+
+
+
+
+.clearBoth {
+	clear: both;
+}
