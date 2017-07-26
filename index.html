@@ -29,7 +29,7 @@
                   <span>Name:&nbsp;</span>
                 </div>
                 <div class="tableCell tableInput">
-                  <input type="text" name="charName" value="">
+                  <input type="text" ng-model="charName" ng-blur="setName(charName)">
                 </div>
               </div>
               <div class="tableRow" style>
@@ -37,10 +37,7 @@
                   <span>Class:&nbsp;</span>
                 </div>
                 <div class="tableCell tableInput">
-                  <input type="text" name="charClass" ng-model="classChoice">
-                </div>
-                <div>
-                  <button ng-click="setClass(classChoice)">Submit</button>
+                  <input type="text" ng-model="classChoice" ng-blur="setClass(classChoice)">
                 </div>
               </div>
               <div class="tableRow" style>
@@ -48,7 +45,7 @@
                   <span>Level:&nbsp;</span>
                 </div>
                 <div class="tableCell tableInput">
-                  <input type="text" name="charLevel" value="">
+                  <input type="text" ng-model="level" ng-blur="calcLevel(level)">
                 </div>
               </div>
               <div class="tableRow" style>
@@ -56,7 +53,7 @@
                   <span>Dev.&nbsp;Points:&nbsp;</span>
                 </div>
                 <div class="tableCell tableInput">
-                  <input type="text" name="charPoints" value="">
+                  <p>{{otherStats.devPoints}}/{{baseStats.devPoints}}</p>
                 </div>
               </div>
               <div class="tableRow" style>
@@ -64,7 +61,7 @@
                   <span>Appearance:&nbsp;</span>
                 </div>
                 <div class="tableCell tableInput">
-                  <input type="text" name="charAppearance" value="">
+                  <input type="text" ng-model="appearance" ng-blur="setAppearance(appearance)">
                 </div>
               </div>
               <div class="tableRow" style>
@@ -72,7 +69,7 @@
                   <span>Size:&nbsp;</span>
                 </div>
                 <div class="tableCell tableInput">
-                  <input type="text" name="charSize" value="">
+                  <p>{{otherStats.sizeStat}}</p>
                 </div>
               </div>
             </div>
@@ -87,7 +84,7 @@
                   <span>Player:&nbsp;</span>
                 </div>
                 <div class="tableCell tableInput">
-                  <input type="text" name="charPlayer" value="">
+                  <input type="text" ng-model="player" ng-blur="setPlayer(player)">
                 </div>
               </div>
               <div class="tableRow" style>
@@ -95,7 +92,7 @@
                   <span>Gender:&nbsp;</span>
                 </div>
                 <div class="tableCell tableInput">
-                  <input type="text" name="charGender" value="">
+                  <input type="text" ng-model="gender" ng-blur="setGender(gender)">
                 </div>
               </div>
               <div class="tableRow" style>
@@ -103,7 +100,7 @@
                   <span>Age:&nbsp;</span>
                 </div>
                 <div class="tableCell tableInput">
-                  <input type="text" name="charAge" value="">
+                  <input type="text" ng-model="age" ng-blur="setAge(age)">
                 </div>
               </div>
               <div class="tableRow" style>
@@ -111,7 +108,7 @@
                   <span>Presence:&nbsp;</span>
                 </div>
                 <div class="tableCell tableInput">
-                  <input type="text" name="charPresence" value="">
+                  <p>{{otherStats.presence}}</p>
                 </div>
               </div>
               <div class="tableRow" style>
@@ -119,7 +116,7 @@
                   <span>Hair/Eyes:&nbsp;</span>
                 </div>
                 <div class="tableCell tableInput">
-                  <input type="text" name="charHair" value="">
+                  <input type="text" ng-model="hairEyes" ng-blur="setHairEyes(hairEyes)">
                 </div>
               </div>
               <div class="tableRow" style>
@@ -127,7 +124,7 @@
                   <span>Height/Weight:&nbsp;</span>
                 </div>
                 <div class="tableCell tableInput">
-                  <input type="text" name="charHeight" value="">
+                  <input type="text" ng-model="heightWeight" ng-blur="setHeightWeight(heightWeight)">
                 </div>
               </div>
             </div>
@@ -151,46 +148,43 @@
               <th><strong><u>BONUS</u></strong></th>
               <tr>
                 <td class="charColumnLable">Strength:</td>
-                <td class="charColumnInput"><input type="number" name="charStr" ng-model="charStr"></td>
+                <td class="charColumnInput"><input type="number" ng-model="charStr" ng-blur="enterStats(charStr, charAgi, charDex, charCon, charInt, charPow, charWil, charPer)"></td>
                 <td class="charColumnInput"><p>{{otherStats.str}}</p></td>
               </tr>
               <tr>
                 <td class="charColumnLable">Agility:</td>
-                <td class="charColumnInput"><input type="number" name="charAgi" ng-model="charAgi"></td>
+                <td class="charColumnInput"><input type="number" ng-model="charAgi" ng-blur="enterStats(charStr, charAgi, charDex, charCon, charInt, charPow, charWil, charPer)"></td>
                 <td class="charColumnInput"><p>{{otherStats.agi}}</p></td>
               </tr>
               <tr>
                 <td class="charColumnLable">Dexterity:</td>
-                <td class="charColumnInput"><input type="number" name="charDex" ng-model="charDex"></td>
+                <td class="charColumnInput"><input type="number" ng-model="charDex" ng-blur="enterStats(charStr, charAgi, charDex, charCon, charInt, charPow, charWil, charPer)"></td>
                 <td class="charColumnInput"><p>{{otherStats.dex}}</p></td>
               </tr>
               <tr>
                 <td class="charColumnLable">Constitution:</td>
-                <td class="charColumnInput"><input type="number" name="charCon" ng-model="charCon"></td>
+                <td class="charColumnInput"><input type="number" ng-model="charCon" ng-blur="enterStats(charStr, charAgi, charDex, charCon, charInt, charPow, charWil, charPer)"></td>
                 <td class="charColumnInput"><p>{{otherStats.con}}</p></td>
               </tr>
               <tr>
                 <td class="charColumnLable">Intelligence:</td>
-                <td class="charColumnInput"><input type="number" name="charInt" ng-model="charInt"></td>
+                <td class="charColumnInput"><input type="number" ng-model="charInt" ng-blur="enterStats(charStr, charAgi, charDex, charCon, charInt, charPow, charWil, charPer)"></td>
                 <td class="charColumnInput"><p>{{otherStats.int}}</p></td>
               </tr>
               <tr>
                 <td class="charColumnLable">Power:</td>
-                <td class="charColumnInput"><input type="number" name="charPow" ng-model="charPow"></td>
+                <td class="charColumnInput"><input type="number" ng-model="charPow" ng-blur="enterStats(charStr, charAgi, charDex, charCon, charInt, charPow, charWil, charPer)"></td>
                 <td class="charColumnInput"><p>{{otherStats.pow}}</p></td>
               </tr>
               <tr>
                 <td class="charColumnLable">Willpower:</td>
-                <td class="charColumnInput"><input type="number" name="charWil" ng-model="charWil"></td>
+                <td class="charColumnInput"><input type="number" ng-model="charWil" ng-blur="enterStats(charStr, charAgi, charDex, charCon, charInt, charPow, charWil, charPer)"></td>
                 <td class="charColumnInput"><p>{{otherStats.wil}}</p></td>
               </tr>
               <tr>
                 <td class="charColumnLable">Perception:</td>
-                <td class="charColumnInput"><input type="number" name="charPer" ng-model="charPer"></td>
+                <td class="charColumnInput"><input type="number" ng-model="charPer" ng-blur="enterStats(charStr, charAgi, charDex, charCon, charInt, charPow, charWil, charPer)"></td>
                 <td class="charColumnInput"><p>{{otherStats.per}}</p></td>
-              </tr>
-              <tr>
-                <button ng-click="enterStats(charStr, charAgi, charDex, charCon, charInt, charPow, charWil, charPer)">Submit</button>
               </tr>
             </table>
           </div>
@@ -201,39 +195,39 @@
               <th colspan="4"><strong><u>HEALTH AND DEFENSE</u></strong></th>
               <tr>
                 <td class="healthColumnLable">Life Points:</td>
-                <td class="healthColumnInput"><input type="text" name="charLifeMax" value=""></td>
+                <td class="healthColumnInput"><p>{{otherStats.lp}}</p></td>
                 <td>&nbsp;Current:</td>
-                <td class="healthColumnInput"><input type="text" name="charLifeCur" value=""></td>
+                <td class="healthColumnInput"><input type="number" ng-model="currentLP" ng-blur="setCurrentLP(currentLP)"></td>
               </tr>
               <tr>
                 <td class="healthColumnLable">Fatigue:</td>
-                <td class="healthColumnInput"><input type="text" name="charFatMax" value=""></td>
+                <td class="healthColumnInput"><p>{{otherStats.fatigue}}</p></td>
                 <td>&nbsp;Current:</td>
-                <td class="healthColumnInput"><input type="text" name="charFatCur" value=""></td>
+                <td class="healthColumnInput"><input type="text" ng-model="currentFatigue" ng-blur="setCurrentFatigue(currentFatigue)"></td>
               </tr>
               <tr>
-                <td class="healthColumnLable">Physical R:</td>
-                <td class="healthColumnInput"><input type="text" name="charPhR" value=""></td>
+                <td class="healthColumnLable">Physical&nbsp;R:</td>
+                <td class="healthColumnInput"><p>{{otherStats.phR}}</p></td>
               </tr>
               <tr>
-                <td class="healthColumnLable">Magic R:</td>
-                <td class="healthColumnInput"><input type="text" name="charMR" value=""></td>
+                <td class="healthColumnLable">Magic&nbsp;R:</td>
+                <td class="healthColumnInput"><p>{{otherStats.mR}}</p></td>
               </tr>
               <tr>
-                <td class="healthColumnLable">Psychic R:</td>
-                <td class="healthColumnInput"><input type="text" name="charPsR" value=""></td>
+                <td class="healthColumnLable">Psychic&nbsp;R:</td>
+                <td class="healthColumnInput"><p>{{otherStats.psR}}</p></td>
               </tr>
               <tr>
-                <td class="healthColumnLable">Venom R:</td>
-                <td class="healthColumnInput"><input type="text" name="charVR" value=""></td>
+                <td class="healthColumnLable">Venom&nbsp;R:</td>
+                <td class="healthColumnInput"><p>{{otherStats.vR}}</p></td>
               </tr>
               <tr>
-                <td class="healthColumnLable">Disease R:</td>
-                <td class="healthColumnInput"><input type="text" name="charDR" value=""></td>
+                <td class="healthColumnLable">Disease&nbsp;R:</td>
+                <td class="healthColumnInput"><p>{{otherStats.dR}}</p></td>
               </tr>
               <tr>
-                <td class="healthColumnLable">Wear Armor</td>
-                <td class="healthColumnInput"><input type="text" name="charWA" value=""></td>
+                <td class="healthColumnLable">Wear&nbsp;Armor</td>
+                <td class="healthColumnInput"><p>{{otherStats.wearArmor}}</p></td>
               </tr>
             </table>
 
@@ -244,35 +238,35 @@
             <table id="speed">
               <th colspan="2"><strong><u>SPEED</u></strong></th>
               <tr>
-                <td class="speedColumnLable">Initiative (Natural)</td>
-                <td class="speedColumnInput"><input type="text" name="charInitN" value=""></td>
+                <td class="speedColumnLable">Initiative&nbsp;(Natural)</td>
+                <td class="speedColumnInput"><p>{{otherStats.natInit}}</p></td>
               </tr>
               <tr>
-                <td class="speedColumnLable">Initiative (Setup 1)</td>
+                <td class="speedColumnLable">Initiative&nbsp;(Setup 1)</td>
                 <td class="speedColumnInput"><input type="text" name="charInit1" value=""></td>
               </tr>
               <tr>
-                <td class="speedColumnLable">Initiative (Setup 2)</td>
+                <td class="speedColumnLable">Initiative&nbsp;(Setup 2)</td>
                 <td class="speedColumnInput"><input type="text" name="charInit2" value=""></td>
               </tr>
               <tr>
-                <td class="speedColumnLable">Initiative (Setup 3)</td>
+                <td class="speedColumnLable">Initiative&nbsp;(Setup 3)</td>
                 <td class="speedColumnInput"><input type="text" name="charInit3" value=""></td>
               </tr>
               <tr>
-                <td class="speedColumnLable">Initiative (Setup 4)</td>
+                <td class="speedColumnLable">Initiative&nbsp;(Setup 4)</td>
                 <td class="speedColumnInput"><input type="text" name="charInit4" value=""></td>
               </tr>
               <tr>
-                <td class="speedColumnLable">Initiative (Setup 5)</td>
+                <td class="speedColumnLable">Initiative&nbsp;(Setup 5)</td>
                 <td class="speedColumnInput"><input type="text" name="charInit5" value=""></td>
               </tr>
               <tr>
-                <td class="speedColumnLable">Movement (Ground)</td>
-                <td class="speedColumnInput"><input type="text" name="charMoveG" value=""></td>
+                <td class="speedColumnLable">Movement&nbsp;(Ground)</td>
+                <td class="speedColumnInput"><p>{{otherStats.movement}}</p></td>
               </tr>
               <tr>
-                <td class="speedColumnLable">Movement (Other)</td>
+                <td class="speedColumnLable">Movement&nbsp;(Other)</td>
                 <td class="speedColumnInput"><input type="text" name="charMoveO" value=""></td>
               </tr>
             </table>
@@ -291,21 +285,21 @@
               <th colspan="2"><strong><u>COMBAT ABLILITIES</u></strong></th>
               <tr>
                 <td class="comColumnLable"><strong>Attack</strong></td>
-                <td class="comColumnInput"><input type="text" name="charBaseAtk" value=""></td>
+                <td class="comColumnInput"><p>{{otherStats.attack}}</p></td>
               </tr>
               <tr>
                 <td colspan="2" class="comColumnInput"><input type="text" name="charTotAtk" value=""></td>
               </tr>
               <tr>
                 <td class="comColumnLable"><strong>Block</strong></td>
-                <td class="comColumnInput"><input type="text" name="charBaseBlk" value=""></td>
+                <td class="comColumnInput"><p>{{otherStats.block}}</p></td>
               </tr>
               <tr>
                 <td colspan="2" class="comColumnInput"><input type="text" name="charTotBlk" value=""></td>
               </tr>
               <tr>
                 <td class="comColumnLable"><strong>Dodge</strong></td>
-                <td class="comColumnInput"><input type="text" name="charBaseDod" value=""></td>
+                <td class="comColumnInput"><p>{{otherStats.dodge}}</p></td>
               </tr>
               <tr>
                 <td colspan="2" class="comColumnInput"><input type="text" name="charTotDod" value=""></td>

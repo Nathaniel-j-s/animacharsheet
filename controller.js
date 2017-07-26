@@ -6,10 +6,13 @@ angular.module('animaSheet').controller('animaCtrl', function($scope, animaSrvc)
     classChoice: "",
     gender: "",
     level: 0,
+    devPoints: 0,
     age: 0,
     appearance: 0,
-    hair: "",
-    eyes: "",
+    hairEyes: "",
+    heightWeight: "",
+    currentLP: 0,
+    currentFatigue: 0,
     str: 0,
     agi: 0,
     dex: 0,
@@ -55,9 +58,6 @@ angular.module('animaSheet').controller('animaCtrl', function($scope, animaSrvc)
     // innateBonusPrim: 0,
     // innateBonusSeco: 0
   };
-
-  // Should I have another object that gets filled with ALL stats, post-calculation?
-  // Justification for not having one: I'd have to write more functions to reload a character.
 
   $scope.setClass =  function(classChoice) { // Figure out a good way to include innate bonuses
     switch(classChoice) {
@@ -131,7 +131,7 @@ angular.module('animaSheet').controller('animaCtrl', function($scope, animaSrvc)
         // classStats.innateBonusPrim = +5 attack, +5 dodge;
         // classStats.innateBonusSeco = +10 acrobatics, +10 jump, +10 athletics, +10 sleightOfHand, +10 style;
         break;
-      case 'Paladin': // Unfinished class
+      case 'Paladin':
         $scope.classStats.lifePointMultiple = 15;
         $scope.classStats.lifePoints = 15;
         $scope.classStats.initiative = 5;
@@ -811,15 +811,6 @@ angular.module('animaSheet').controller('animaCtrl', function($scope, animaSrvc)
   };
 
   $scope.enterStats = function(charStr, charAgi, charDex, charCon, charInt, charPow, charWil, charPer) { // Takes stats from form and puts into Base Stats
-    // $scope.baseStats.charName = document.getElementById('charName').value;
-    // $scope.baseStats.player = document.getElementById('playername').value;
-    // $scope.baseStats.classChoice = document.getElementById('classChoice').value;
-    // $scope.baseStats.gender = document.getElementById('gender').value;
-    // $scope.baseStats.level = document.getElementById('level').value;
-    // $scope.baseStats.age = document.getElementById('age').value;
-    // $scope.baseStats.appearance = document.getElementById('appearance').value;
-    // $scope.baseStats.hair = document.getElementById('hair').value;
-    // $scope.baseStats.eyes = document.getElementById('eyes').value;
     $scope.baseStats.str = charStr;
     $scope.baseStats.agi = charAgi;
     $scope.baseStats.dex = charDex;
@@ -828,6 +819,48 @@ angular.module('animaSheet').controller('animaCtrl', function($scope, animaSrvc)
     $scope.baseStats.pow = charPow;
     $scope.baseStats.wil = charWil;
     $scope.baseStats.per = charPer;
+    $scope.calcOtherChar();
+  };
+
+  $scope.setName = function(charName) {
+    $scope.baseStats.charName = charName;
+  };
+
+  $scope.setPlayer = function(player) {
+    $scope.baseStats.player = player;
+  };
+
+  $scope.setGender = function(gender) {
+    $scope.baseStats.gender = gender;
+  };
+
+  $scope.setAge = function(age) {
+    $scope.baseStats.age = age;
+  };
+
+  $scope.setAppearance = function(appearance) {
+    $scope.baseStats.appearance = appearance;
+  };
+
+  $scope.setHairEyes = function(hairEyes) {
+    $scope.baseStats.hairEyes = hairEyes;
+  };
+
+  $scope.setHeightWeight = function(heightWeight) {
+    $scope.baseStats.heightWeight = heightWeight;
+  };
+
+  $scope.setCurrentLP = function(currentLP) {
+    $scope.baseStats.currentLP = currentLP;
+  };
+
+  $scope.setCurrentLP = function(currentFatigue) {
+    $scope.baseStats.currentFatigue = currentFatigue;
+  };
+
+  $scope.calcLevel = function(level) {
+    $scope.baseStats.level = level;
+    $scope.baseStats.devPoints = 500 + ($scope.baseStats.level * 100);
     $scope.calcOtherChar();
   };
 
